@@ -21,8 +21,7 @@ namespace XComponent.Functions.Controllers
         {
             try
             {
-                var response = FunctionsFactory.Instance.GetKeyValuePairs();
-                return Request.CreateResponse(response == null ? HttpStatusCode.NoContent : HttpStatusCode.OK, response);
+                return Request.CreateResponse(FunctionsFactory.Instance.GetKeyValuePairs());
             }
             catch (ValidationException ve)
             {

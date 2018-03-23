@@ -35,13 +35,6 @@ namespace XComponent.Functions.Core
         private static readonly Dictionary<int, IFunctionsManager> _functionsFactoryByKey =
             new Dictionary<int, IFunctionsManager>();
 
-        public class KeyValuePairSettingsItem
-        {
-            public string ComponentName { get; set; }
-            public string Key { get; set; }
-            public string Value { get; set; }
-        }
-
         public List<KeyValuePairSettingsItem> KeyValuePairs = new List<KeyValuePairSettingsItem>();
 
         public List<KeyValuePairSettingsItem> GetKeyValuePairs()
@@ -49,7 +42,7 @@ namespace XComponent.Functions.Core
             return KeyValuePairs;
         }
 
-        public void SaveRessources(string componentName, string key, string value)
+        public void AddKeyValuePair(string componentName, string key, string value)
         {
             lock (_functionsFactoryByKey)
             {

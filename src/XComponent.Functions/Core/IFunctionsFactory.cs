@@ -8,7 +8,7 @@ namespace XComponent.Functions.Core
         FunctionParameter GetTask(string componentName, string stateMachineName);
         void AddTaskResult(FunctionResult result);
         FunctionsConfiguration Configuration { get; set; }
-        void SaveRessources(string componentName, string key, string value);
-        List<FunctionsFactory.KeyValuePairSettingsItem> GetKeyValuePairs();
+        void AddKeyValuePair(string componentName, string key, string value);
+        List<KeyValuePairSettingsItem> GetKeyValuePairs();
     }
 }
