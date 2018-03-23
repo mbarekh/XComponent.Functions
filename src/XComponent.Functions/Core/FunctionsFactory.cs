@@ -23,13 +23,44 @@ namespace XComponent.Functions.Core
                         instance = new FunctionsFactory();
                     }
                 }
+
                 return instance;
             }
         }
 
-        private FunctionsFactory() { }
+        private FunctionsFactory()
+        {
+        }
 
-        private static readonly Dictionary<int, IFunctionsManager> _functionsFactoryByKey = new Dictionary<int, IFunctionsManager>();
+        private static readonly Dictionary<int, IFunctionsManager> _functionsFactoryByKey =
+            new Dictionary<int, IFunctionsManager>();
+
+        public class KeyValuePairSettingsItem
+        {
+            public string ComponentName { get; set; }
+            public string Key { get; set; }
+            public string Value { get; set; }
+        }
+
+        public List<KeyValuePairSettingsItem> KeyValuePairs = new List<KeyValuePairSettingsItem>();
+
+        public List<KeyValuePairSettingsItem> GetKeyValuePairs()
+        {
+            return KeyValuePairs;
+        }
+
+        public void SaveRessources(string componentName, string key, string value)
+        {
+            lock (_functionsFactoryByKey)
+            {
+                KeyValuePairs.Add(new KeyValuePairSettingsItem
+                {
+                    ComponentName = componentName,
+                    Key = key,
+                    Value = value
+                });
+            }
+        }
 
         public IFunctionsManager CreateFunctionsManager(string componentName, string stateMachineName, Uri url)
         {
