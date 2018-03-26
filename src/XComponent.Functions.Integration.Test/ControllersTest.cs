@@ -133,7 +133,6 @@ namespace XComponent.Functions.Test
         public async Task GetControllerReturnsRessource()
         {
             var address = $"http://127.0.0.1:{Port}/api/Ressource";
-
             var component = "component";
             var key = "key";
             var value = "value";
