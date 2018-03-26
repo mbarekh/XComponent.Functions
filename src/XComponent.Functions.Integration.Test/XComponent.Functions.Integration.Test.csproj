@@ -55,11 +55,5 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\XComponent.Functions\XComponent.Functions.csproj">
-      <Project>{5653C5BF-16E8-4B95-81D7-E70254B0B6F8}</Project>
-      <Name>XComponent.Functions</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
