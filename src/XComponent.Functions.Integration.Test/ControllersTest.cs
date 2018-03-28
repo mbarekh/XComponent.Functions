@@ -116,7 +116,7 @@ namespace XComponent.Functions.Test
         }
 
         [Test]
-        public async Task GetControllerReturnsEmptyList()
+        public async Task GetStringResourcesReturnsEmptyList()
         {
             var address = $"http://127.0.0.1:{Port}/api/StringResources";
             var response = await new HttpClient().GetAsync(address);
@@ -128,7 +128,7 @@ namespace XComponent.Functions.Test
         }
 
         [Test]
-        public async Task GetControllerReturnsStringResources()
+        public async Task GetStringResources()
         {
             var address = $"http://127.0.0.1:{Port}/api/StringResources";
             var component = "component";

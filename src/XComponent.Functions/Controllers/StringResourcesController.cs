@@ -15,10 +15,7 @@ namespace XComponent.Functions.Controllers
     public class StringResourcesController : ApiController
     {
         [SwaggerResponse(HttpStatusCode.OK, "Get Available String Resources as a list", typeof(FunctionParameter))]
-        [SwaggerResponse(HttpStatusCode.NoContent, "No String Resources available, returns empty list")]
         [SwaggerResponse(HttpStatusCode.BadRequest, "Invalid request")]
-//        [HttpGet]
-//        [Route("api/StringResources")]
         public HttpResponseMessage GetStringResources()
         {
             try
