@@ -77,7 +77,7 @@
   <ItemGroup>
     <Compile Include="Controllers\FunctionsController.cs" />
     <Compile Include="Controllers\ConfigurationController.cs" />
-    <Compile Include="Controllers\RessourceController.cs" />
+    <Compile Include="Controllers\StringResourcesController.cs" />
     <Compile Include="Core\Clone\ArrayExtensions.cs" />
     <Compile Include="Core\Clone\ArrayTraverse.cs" />
     <Compile Include="Core\Clone\DeepCopyExtension.cs" />

@@ -118,21 +118,19 @@ namespace XComponent.Functions.Test
         [Test]
         public async Task GetControllerReturnsEmptyList()
         {
-            var address = $"http://127.0.0.1:{Port}/api/Ressource";
-
+            var address = $"http://127.0.0.1:{Port}/api/StringResources";
             var response = await new HttpClient().GetAsync(address);
 
             var responseContent = await response.Content.ReadAsStringAsync();
-
             var list = JsonConvert.DeserializeObject<List<KeyValuePairSettingsItem>>(responseContent);
 
             CollectionAssert.IsEmpty(list);
         }
 
         [Test]
-        public async Task GetControllerReturnsRessource()
+        public async Task GetControllerReturnsStringResources()
         {
-            var address = $"http://127.0.0.1:{Port}/api/Ressource";
+            var address = $"http://127.0.0.1:{Port}/api/StringResources";
             var component = "component";
             var key = "key";
             var value = "value";
